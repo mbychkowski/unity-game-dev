@@ -14,10 +14,16 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/:id', function (req, res, next) {
-  const dummyData = {
-    name: req.params.id,
-    date: '2013-01-01T00:00:00',
-    age: 30,
+  var dummyData = {
+    userid: req.params['id'],
+    username: 'mbski',
+    wins: 18,
+    losses: 1000,
+    someArray: [
+      { name: 'foo', value: 2.5 },
+      { name: 'bar', value: 7.1 },
+      { name: 'baz', value: 9000.001 },
+    ],
   };
   res.json(dummyData);
 });
