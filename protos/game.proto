@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option go_package="github.com/mbychkowski/unity-game-dev/protos";
+
+package gamepb;
+
+service Game {
+  rpc GetPlayer(GetPlayerRequest) returns (stream GetPlayerResponse) {}
+}
+
+message GetPlayerRequest {
+
+}
+
+message GetPlayerResponse {
+  Player player = 1;
+}
+
+message Player {
+  string id = 1;
+  string name = 2;
+  int32 level = 3;
+  Item item = 4;
+}
+
+message Item {
+  string name = 1;
+  int32 hp = 2;
+  int32 durability = 3;
+}
